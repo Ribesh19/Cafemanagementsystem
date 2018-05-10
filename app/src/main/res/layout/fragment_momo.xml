@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:isScrollContainer="false">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FoodFragments.MomoFragment"
+    tools:layout_editor_absoluteY="73dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/pizza_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkbox_buff_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="BUFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_veg_momo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_veg_momo" />
+
+    <CheckBox
+        android:id="@+id/checkbox_veg_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="VEG"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkbox_chicken_momo"
+        app:layout_constraintStart_toEndOf="@+id/checkbox_buff_momo"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <CheckBox
+        android:id="@+id/checkbox_chicken_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="CHICKEN"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_veg_momo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_veg_momo" />
+
+    <CheckBox
+        android:id="@+id/checkbox_steam_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STEAM"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_fried_momo"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_buff_momo"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_fried_momo" />
+
+    <CheckBox
+        android:id="@+id/checkbox_fried_momo"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="FRIED"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_veg_momo"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_veg_momo" />
+
+    <CheckBox
+        android:id="@+id/checkbox_c_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkbox_fried_momo"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_chicken_momo"
+        app:layout_constraintTop_toTopOf="@+id/checkbox_fried_momo" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="SUBMIT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#acb"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
