@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,8 +27,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import java.util.Objects;
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -40,10 +39,15 @@ public class MomoFragment extends Fragment {
     CheckBox checkBox_fried_momo;
     CheckBox checkBox_c_momo;
     Button btn_submit;
-
+    Button btn_increase;
+    Button btn_decrease;
+    TextView quantity_text_view;
     String category;
     String categoryitem;
+    Integer quantity=0;
+
     int table_no;
+
     private static final String URL = "http://192.168.1.108/MyApi/add.php";
 
 
@@ -67,14 +71,32 @@ public class MomoFragment extends Fragment {
         checkBox_fried_momo=rootview.findViewById(R.id.checkbox_fried_momo);
         checkBox_c_momo=rootview.findViewById(R.id.checkbox_c_momo);
         btn_submit=rootview.findViewById(R.id.btn_submit);
-        table_no=((MainActivity) Objects.requireNonNull(getActivity())).PassTableNo();
+        btn_increase=rootview.findViewById(R.id.increase);
+        btn_decrease=rootview.findViewById(R.id.decrease);
+        quantity_text_view=rootview.findViewById(R.id.integer_number);
+
+        table_no=((MainActivity)getActivity()).PassTableNo();
+        btn_decrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quantity--;
+                quantity_text_view.setText(quantity.toString());
+
+            }
+        });
+        btn_increase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quantity++;
+                quantity_text_view.setText(quantity.toString());
+            }
+        });
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                // Toast.makeText(getContext(),table_no,Toast.LENGTH_SHORT).show();
                 if (checkBox_buff_momo.isChecked()) {
                     Toast.makeText(getContext(), "buff momo", Toast.LENGTH_SHORT).show();
-
                     category="Buff Momo";
                 } else if (checkBox_veg_momo.isChecked()) {
                     Toast.makeText(getContext(), "veg momo", Toast.LENGTH_SHORT).show();
@@ -136,6 +158,8 @@ public class MomoFragment extends Fragment {
             }
 
         });
+
+
 
         return rootview;
     }

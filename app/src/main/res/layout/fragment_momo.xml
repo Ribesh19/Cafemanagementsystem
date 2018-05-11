@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    android:layout_height="fill_parent"
-    android:layout_width="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:isScrollContainer="false">
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_constraint_momo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".FoodFragments.MomoFragment"
-    tools:layout_editor_absoluteY="73dp">
+    >
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="180dp"
-        android:src="@drawable/pizza_header"
+        android:src="@drawable/momo_"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,19 +81,121 @@
         app:layout_constraintStart_toStartOf="@+id/checkbox_chicken_momo"
         app:layout_constraintTop_toTopOf="@+id/checkbox_fried_momo" />
 
+    <CheckBox
+        android:id="@+id/check_kothey_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KOTHEY"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/check_chilly_momo"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_steam_momo"
+        app:layout_constraintTop_toTopOf="@+id/check_chilly_momo" />
+
+    <CheckBox
+        android:id="@+id/check_chilly_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CHILLY"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_fried_momo"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_fried_momo" />
+
+    <CheckBox
+        android:id="@+id/check_soup_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOUP"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/check_chilly_momo"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_chicken_momo"
+        app:layout_constraintTop_toTopOf="@+id/check_chilly_momo" />
+
+    <CheckBox
+        android:id="@+id/check_sizzler_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIZZLER"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/check_sadeko_momo"
+        app:layout_constraintStart_toStartOf="@+id/check_kothey_momo"
+        app:layout_constraintTop_toTopOf="@+id/check_sadeko_momo" />
+
+    <CheckBox
+        android:id="@+id/check_sadeko_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="SADEKO"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/check_chilly_momo"
+        app:layout_constraintTop_toBottomOf="@+id/check_chilly_momo" />
+
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
         android:text="SUBMIT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:background="#acb"/>
 
+    <EditText
+        android:id="@+id/edit_text_momo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Any special request is placed here."
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit" />
+
+
+    <Button
+        android:id="@+id/decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+
+        android:text="-"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/integer_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/integer_number"
+        android:background="#a34138"/>
+
+    <TextView
+        android:id="@+id/integer_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="32dp"
+        android:text="0"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:textColor="#9eaf1d"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/decrease" />
+
+    <Button
+        android:id="@+id/increase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginStart="32dp"
+        android:background="#a34138"
+        android:text="+"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/integer_number"
+        app:layout_constraintStart_toEndOf="@+id/integer_number"
+        app:layout_constraintTop_toTopOf="@+id/integer_number" />
 
 
 </android.support.constraint.ConstraintLayout>
-    </LinearLayout>
-</ScrollView>
