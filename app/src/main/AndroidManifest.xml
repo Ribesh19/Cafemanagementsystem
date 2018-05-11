@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".FoodActivity" />
-        <activity android:name=".TableActivity">
+        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.FoodActivity" />
+        <activity android:name=".Activity.TableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +24,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Activity.UpdateActivity"></activity>
     </application>
 
 </manifest>

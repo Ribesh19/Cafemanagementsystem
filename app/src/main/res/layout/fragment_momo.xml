@@ -5,8 +5,7 @@
     android:id="@+id/layout_constraint_momo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FoodFragments.MomoFragment"
-    >
+    tools:context=".FoodFragments.MomoFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -149,8 +148,7 @@
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="Any special request is placed here."
-        android:inputType="textMultiLine"
+        android:hint="Special request."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_submit" />
 
@@ -162,7 +160,6 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/integer_number"

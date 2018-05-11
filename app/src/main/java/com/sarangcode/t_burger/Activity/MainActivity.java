@@ -1,17 +1,16 @@
-package com.sarangcode.t_burger;
+package com.sarangcode.t_burger.Activity;
 
-import android.app.FragmentManager;
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.sarangcode.t_burger.FoodFragments.BurgerFragment;
 import com.sarangcode.t_burger.FoodFragments.ChowmeinFragment;
 import com.sarangcode.t_burger.FoodFragments.DrinksFragment;
 import com.sarangcode.t_burger.FoodFragments.MomoFragment;
 import com.sarangcode.t_burger.FoodFragments.PizzaFragment;
+import com.sarangcode.t_burger.MasterListFragment;
+import com.sarangcode.t_burger.R;
 
 public class MainActivity extends AppCompatActivity implements MasterListFragment.OnImageClickListener {
     // Track whether to display a two-pane or single-pane UI

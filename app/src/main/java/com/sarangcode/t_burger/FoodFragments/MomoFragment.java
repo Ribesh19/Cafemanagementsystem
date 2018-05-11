@@ -3,14 +3,11 @@ package com.sarangcode.t_burger.FoodFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.sarangcode.t_burger.MainActivity;
+import com.sarangcode.t_burger.Activity.MainActivity;
 import com.sarangcode.t_burger.R;
 
 import org.json.JSONException;
@@ -131,7 +128,8 @@ public class MomoFragment extends Fragment {
                     jsonMomo.put("tableno", table_no);
                     jsonMomo.put("category",category);
                     jsonMomo.put("categoryitem",categoryitem);
-                    jsonMomo.put("quantity",3);
+                    jsonMomo.put("quantity",quantity
+                    );
                     Toast.makeText(getContext(),jsonMomo.toString(),Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
