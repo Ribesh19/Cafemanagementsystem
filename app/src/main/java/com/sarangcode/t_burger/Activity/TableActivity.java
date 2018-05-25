@@ -25,7 +25,7 @@ public class TableActivity extends AppCompatActivity{
        btn_takeOrder=findViewById(R.id.btn_take_order);
        btn_update=findViewById(R.id.btn_update);
 
-       String [] number={"One(1)","Two(2)","Three(3)","Four(4)","5","6","7","8","9","10"};
+       String [] number={"1","2","3","4","5","6","7","8","9","10"};
        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,number);
 
 
@@ -62,7 +62,6 @@ public class TableActivity extends AppCompatActivity{
                SharedPreferences settings = getSharedPreferences(
                        "pref", 0);
                SharedPreferences.Editor editor = settings.edit();
-
                editor.putString("table_no",table_no.toString());
                // editor.putInt("table_no",table_no);
                editor.apply();
