@@ -31,20 +31,26 @@ import org.json.JSONTokener;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    private static final String URL="http://192.168.1.108/MyApi/getSpecific.php";
+    private static final String URL="http://192.168.1.108/MyApi/Api.php";
     Button btn_submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
-        btn_submit=findViewById(R.id.btn_update_submit);
+        //btn_submit=findViewById(R.id.btn_update_submit);
         final RecyclerView MenuList=findViewById(R.id.MenuList);
         MenuList.setLayoutManager(new LinearLayoutManager(this));
 
-      /*  StringRequest request = new StringRequest(URL, new Response.Listener<String>() {
+      StringRequest request = new StringRequest(URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Toast.makeText(UpdateActivity.this, "Response Received", Toast.LENGTH_SHORT).show();
+                Log.d("MainActivity", response);
+                GsonBuilder gsonBuilder = new GsonBuilder();
+                Gson gson = gsonBuilder.create();
+                Menu[] menus = gson.fromJson(response, Menu[].class);
+                MenuList.setAdapter(new MenuAdapter(UpdateActivity.this,menus));
 
             }
         }, new Response.ErrorListener() {
@@ -52,8 +58,8 @@ public class UpdateActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(UpdateActivity.this, "error", Toast.LENGTH_SHORT);
             }
-        });*/
-        SharedPreferences settings = getSharedPreferences("pref", 0);
+        });
+       /* SharedPreferences settings = getSharedPreferences("pref", 0);
         String table_no=settings.getString("table_no",null);
 
         JSONObject jsonTable_no=new JSONObject();
@@ -84,7 +90,7 @@ public class UpdateActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
             }
-        });
+        });*/
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
 

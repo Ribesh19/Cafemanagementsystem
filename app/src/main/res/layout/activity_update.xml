@@ -8,16 +8,7 @@
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/MenuList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/btn_update_submit"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:text="Submit" />
 
 </LinearLayout>
