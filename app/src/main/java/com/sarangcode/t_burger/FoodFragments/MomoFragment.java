@@ -1,6 +1,7 @@
 package com.sarangcode.t_burger.FoodFragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public class MomoFragment extends Fragment {
     String categoryitem;
     Integer quantity=0;
 
-    int table_no;
+    String table_no;
 
     private static final String URL = "http://192.168.1.108/MyApi/add.php";
 
@@ -103,7 +104,7 @@ public class MomoFragment extends Fragment {
                 else if (checkBox_chicken_momo.isChecked())
                 {
                     Toast.makeText(getContext(), "Chicken momo", Toast.LENGTH_SHORT).show();
-                    category="Chicken Momo ";
+                    category="Chicken Momo";
 
                 }
 
@@ -130,6 +131,7 @@ public class MomoFragment extends Fragment {
                     jsonMomo.put("categoryitem",categoryitem);
                     jsonMomo.put("quantity",quantity
                     );
+
                     Toast.makeText(getContext(),jsonMomo.toString(),Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();

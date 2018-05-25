@@ -1,6 +1,7 @@
 package com.sarangcode.t_burger.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -29,10 +30,14 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
 
     }
-    public int PassTableNo()
+    public String PassTableNo()
     {
-        int table_no=getIntent().getIntExtra("table_no",0);
+       // int table_no=getIntent().getIntExtra("table_no",0);
+        SharedPreferences settings = getSharedPreferences(
+                "pref", 0);
+        String table_no=settings.getString("table_no",null);
         return table_no;
+
     }
 
 

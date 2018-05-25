@@ -1,5 +1,5 @@
 
-package com.sarangcode.t_burger.Menu.sarangcode.t_burger;
+package com.sarangcode.t_burger;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
